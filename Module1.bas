@@ -14,10 +14,10 @@ End Sub
 Public Function Gakunerei(birthDay As Date, orderDay As Date) As Variant
 
 
-Dim tempDay1, tempDay2, tempDay3, tempMonth, r_value As Variant
+Dim tempDay1, tempDay2, tempMonth, r_value As Variant
 
     If IsDate(birthDay) Then
-        If Format(birthDay, "yyyy/mm/dd") >= Format(Year(birthDay) & "/01/01", "yyyy/mm/dd") And Format(birthDay, "yyyy/mm/dd") <= Format(Year(birthDay) & "/04/01", "yyyy/mm/dd") Then
+         If Format(birthDay, "yyyy/mm/dd") >= Format(Year(birthDay) & "/01/01", "yyyy/mm/dd") And Format(birthDay, "yyyy/mm/dd") <= Format(Year(birthDay) & "/04/01", "yyyy/mm/dd") Then
         tempDay1 = DateDiff("d", birthDay, DateSerial(Year(birthDay), 4, 1)) - DateDiff("d", birthDay, DateSerial(Year(birthDay), 1, 1)) + 276 '276 is days between April and December that are solid days.
         tempDay2 = DateAdd("d", CInt(tempDay1), birthDay)
         tempMonth = DateDiff("m", birthDay, tempDay2)
