@@ -9,11 +9,10 @@ Sub start()
   MainForm.Show 'メインフォームを開く
 End Sub
 '######
-'# Calcurating school age
+'# Calcurating school years
 '######
 Public Function Gakunerei(birthDay As Date, orderDay As Date) As Variant
-'birthDay = CDate("1969/1/25")
-'orderDay = CDate("2017/1/25")
+
 
 Dim tempDay1, tempDay2, tempDay3, tempMonth, r_value As Variant
 
