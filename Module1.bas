@@ -21,7 +21,12 @@ Dim tempDay1, tempMonth, r_value As Variant
             tempDay1 = DateAdd("yyyy", -1, birthDay)
             tempMonth = DateDiff("m", tempDay1, orderDay)
         Else
+            If Year(birthDay) < Year(orderDay) Then
+            tempDay1 = DateAdd("yyyy", -1, birthDay)
+            tempMonth = DateDiff("m", tempDay1, orderDay)
+            Else
             tempMonth = DateDiff("m", birthDay, orderDay)
+            End If
         End If
     Else
         Exit Function
