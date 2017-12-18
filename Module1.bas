@@ -22,13 +22,12 @@ Dim tempDay1, tempMonth, r_value As Variant
         ElseIf Format(birthDay, "yyyy/mm/dd") >= Format(Year(birthDay) & "/01/01", "yyyy/mm/dd") And Format(birthDay, "yyyy/mm/dd") <= Format(Year(birthDay) & "/04/01", "yyyy/mm/dd") Then
             tempDay1 = DateAdd("yyyy", -1, birthDay)
             tempMonth = DateDiff("m", tempDay1, orderDay)
-       Else
-            If Year(birthDay) < Year(orderDay) And Not (Format(orderDay, "yyyy/mm/dd") >= Format(Year(orderDay) & "/01/01", "yyyy/mm/dd") And Format(orderDay, "yyyy/mm/dd") <= Format(Year(orderDay) & "/04/01", "yyyy/mm/dd")) Then
+       ElseIf Year(birthDay) < Year(orderDay) And (Format(Month(birthDay) & "/" & Day(birthDay), "mm/dd") > Format(Month(orderDay) & "/" & Day(orderDay), "mm/dd") And Not (Format(orderDay, "yyyy/mm/dd") >= Format(Year(orderDay) & "/01/01", "yyyy/mm/dd") And Format(orderDay, "yyyy/mm/dd") <= Format(Year(orderDay) & "/04/01", "yyyy/mm/dd"))) Then
             tempDay1 = DateAdd("yyyy", -1, birthDay)
             tempMonth = DateDiff("m", tempDay1, orderDay)
-            Else
+        Else
             tempMonth = DateDiff("m", birthDay, orderDay)
-            End If
+    
         End If
     Else
         Exit Function
