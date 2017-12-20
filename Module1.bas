@@ -30,6 +30,7 @@ Dim tempDay1, tempMonth, r_value As Variant
     
         End If
     Else
+        Gakunerei = -1
         Exit Function
     End If
     
